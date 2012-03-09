@@ -21,14 +21,16 @@ config = Pit.get('heroku-invoice-reminder', :require => {
 
 Heroku::Command::Invoice.new.pdf
 
+now = Time.now.strftime('%Y%m')
+
 Mail.defaults { delivery_method :smtp, config }
 Mail.deliver do
   from config[:user_name]
   to config[:to]
   cc config[:cc]
-  subject "Heroku invoice reminder #{Time.now.strftime('%Y%m')}"
+  subject "Heroku invoice reminder #{now}"
   body ''
-  add_file({:filename => "#{Time.now.strftime('%Y%m')}.pdf"})
+  add_file({:filename => "#{now}.pdf"})
 end
 
-FileUtils.rm "#{Time.now.strftime('%Y%m')}.pdf"
+FileUtils.rm "#{now}.pdf"
