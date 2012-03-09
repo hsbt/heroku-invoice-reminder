@@ -16,8 +16,6 @@ config = Pit.get('heroku-invoice-reminder', :require => {
     :password => 'your password',
     :address => 'smtp.gmail.com',
     :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true,
     :to => 'your reminder address',
   })
 
