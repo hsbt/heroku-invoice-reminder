@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 $:.push "."
+$:.push "./heroku-invoice/lib"
 
 require 'rubygems'
 require 'bundler'
 Bundler.require :default
 
 require 'heroku/command/base'
-require 'heroku-invoice/lib/invoice/heroku/client'
-require 'heroku-invoice/lib/invoice/heroku/command/invoice'
+require 'heroku-invoice/init'
 
 config = Pit.get('heroku-invoice-reminder', :require => {
     :user_name => 'your username',
