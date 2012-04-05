@@ -1,3 +1,0 @@
-[submodule "heroku-invoice"]
-	path = heroku-invoice
-	url = git://github.com/hsbt/heroku-invoice.git

@@ -8,9 +8,6 @@ require 'rubygems'
 require 'bundler'
 Bundler.require :default
 
-require 'heroku/command/base'
-require 'heroku-invoice/init'
-
 config = Pit.get('heroku-invoice-reminder', :require => {
     :user_name => 'your username',
     :password => 'your password',
@@ -19,9 +16,9 @@ config = Pit.get('heroku-invoice-reminder', :require => {
     :to => 'your reminder address',
   })
 
-Heroku::Command::Invoice.new.pdf
+now = (Time.now - 30*24*60*60).strftime('%Y%m')
 
-now = Time.now.strftime('%Y%m')
+system("heroku invoice:pdf #{now}")
 
 Mail.defaults { delivery_method :smtp, config }
 Mail.deliver do
