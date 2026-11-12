@@ -1,15 +1,21 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.2.7)
+    addressable (2.9.1)
+      public_suffix (>= 2.0.2, < 8.0)
+    childprocess (5.1.0)
+      logger (~> 1.5)
     heroku (2.21.2)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
       rubyzip
       term-ansicolor (~> 1.0.5)
     i18n (0.6.0)
-    launchy (2.0.5)
-      addressable (~> 2.2.6)
+    launchy (3.1.1)
+      addressable (~> 2.8)
+      childprocess (~> 5.0)
+      logger (~> 1.6)
+    logger (1.7.0)
     mail (2.4.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -17,6 +23,7 @@ GEM
     mime-types (1.17.2)
     pit (0.0.6)
     polyglot (0.3.3)
+    public_suffix (7.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.6.1)
